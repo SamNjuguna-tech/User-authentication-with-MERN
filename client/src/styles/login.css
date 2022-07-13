@@ -1,0 +1,166 @@
+:root{
+    --SegoeFont: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.login-parent-container{
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    background-color: #19e1af;
+}
+
+
+.login-system{
+    height: 70vh;
+    width: 70%;
+    background-color: green;
+    display: flex;
+    flex: column;
+    border-radius: 50px;
+    box-shadow: -1px 11px 47px -8px rgba(0,0,0,0.77);
+    
+}
+.section1{
+    display: flex;
+    
+    
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    background-color: #19e1af;
+}
+.section1 >*{
+    color:#1c1c1c ;
+    font-family: var(--SegoeFont);
+    font-weight: 500;
+    width: 70%;
+    text-align: center;
+}
+.section1 p{
+    font-weight: 400;
+}
+.section2{
+    width: 70%;
+    display: flex;
+    background-color: #D9DDDC;
+    flex-direction: column;
+}
+.text{
+    text-align: right;
+    padding: 10px;
+    margin-right:20px ;
+    font-family: var(--SegoeFont);
+    /*background-color: white;*/
+}
+.logIn-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+    /*background-color: blue;*/
+    margin-top: 10%;
+    /*height: 70%;*/
+}
+.title{
+    font-family: var(--SegoeFont);
+    text-align: center;
+    font-size: 23px;
+    color: black;
+}
+.label{
+    padding:10px ;
+    font-family: var(--SegoeFont);
+    font-size: 18px;
+}
+input{
+    margin-left:10px ;
+    margin-right: 10px;
+    margin-top: 5px;
+    
+    height: 2.3rem;
+    padding: 5px;
+    background-color: #D9DDDC;
+    font-size: 15px;
+}
+/* input:focus{
+   
+} */
+.submit-button{
+    margin-top: 2rem;
+    font-family: var(--SegoeFont);
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #19e1af;
+    border: 0px;
+}
+.submit-button:hover{
+    cursor: pointer;
+}
+.register{
+    text-align: right;
+    padding: 10px;
+    text-decoration: none;
+    font-family: var(--SegoeFont);
+}
+@media only screen and (max-width: 700px){
+
+    /* .login-parent-container{
+       
+    }  */
+    .login-system{
+        margin: 0;
+        padding: 0;
+        display: grid;
+        /*height: 70%;*/
+    }
+    .inner-section{
+        width: 100%;
+        height: 100%;
+    }
+    .logIn-form{
+        width: 80%;
+        height: fit-content;
+        
+    }
+    .section2{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+       background-color: #1c1c1c;
+    }
+    .label{
+        width: 100%;
+        margin-left: 0px;
+        height: 1.5rem;
+
+    }
+    input{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        height: 1.4rem;
+    }
+    .submit-button{
+        margin-top: 0px;
+        padding: 0;
+        margin-bottom: 10px;
+        height:2rem ;
+    }
+    .text{
+        margin-right: 0;
+    }
+
+
+    
+}
+.alert{
+    margin-left: 10px;
+}
