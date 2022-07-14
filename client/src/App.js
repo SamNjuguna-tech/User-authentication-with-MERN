@@ -1,29 +1,60 @@
 import React from 'react'
-import './styles/login.css';
+import { useState } from 'react';
+// import './styles/login.css';
 
 
 function App() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail ]= useState('');
+  const [password, setPassword] = useState('');
+
+  async function registerUser(event){
+    event.preventDefault();
+   const response = await fetch('http://localhost:1337/api/register', {
+      method:"POST",
+      headers:{
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+      }),
+    })
+    const data = await response.json()
+    console.log(data)
+  }
   return (
-    <section className='login-parent-container'>
-      <div className='login-system'>
-      <div class="inner-section section1">
-				<h1>MALAIKA INITIATIVE</h1>
-        <p>Love, care and kindness to them that need it the most</p>
-			</div>
-      <div className='inner-section section2'>
-        <form className='logIn-form' id='logIn-form' autoComplete='off'>
-        <span class="title">Log In</span>
-					<label class="label" for="userName">Username</label>
-          <input type="text" id="usn" name="userName" required  autocomplete="off"/>
-					<label class="label" for="userName">password</label>
-          <input type="password" id="psw" name="userName" required/>
-					<p style={{color:"red", display:"none"}} class="alert" id="input-error"></p>
-					{/* <a href="#" class="register">Register</a> */}
-					<input type="submit" value="Login" name="submit" class="submit-button" id="submit-button"/>
-        </form>
-      </div>
-      </div>
-    </section>
+    <div>
+      <h1>Register</h1>
+      <form onSubmit={registerUser}>
+        <input 
+         type="text" 
+         value={name}
+         onChange={(e)=>setName(e.target.value)}
+         placeholder='Name' 
+         />
+         <br/>
+        <input 
+         type="email" 
+         value={email}
+         onChange={(e)=>setEmail(e.target.value)}
+         placeholder='Email'
+         />
+         <br/>
+        <input 
+         type="password"
+         value={password}
+         onChange={(e)=>setPassword(e.target.value)}
+         />
+         <br/>
+        <input
+         type="submit"
+         value="register"
+         />
+      </form>
+    </div>
     )
 }
 
